@@ -23,25 +23,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12},"copycode":{"enable":"ture","style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Introl的blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Introl&#39;s blog">
-<meta property="og:url" content="http://example.com/tags/%E5%9F%BA%E7%A1%80/index.html">
+    <meta name="description" content="看到讨论区都是二分，实际上这道题用贪心来写非常简单 题目分析首先将当前塔台的位置加上通讯距离（即 $a+b$ ）看作为右边界，通过题目不难得出一个贪心策略：如果当前塔台 $i$ 能到达的最右边界比往后的塔台 $i+m$ 位置还要靠右，就可以忽略塔台 $i+1$ 到 $i+m$。转化一下，我们只需要每次记录可以到达的最右边界，如果当前塔台的位置不在最右边界的范围内，就可以更新答案取超频的最大值。因此">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Luogu P9455 [入门赛">
+<meta property="og:url" content="http://example.com/2023/08/03/Luogu-P9455-%E5%85%A5%E9%97%A8%E8%B5%9B-14-%E5%A1%94%E5%8F%B0%E8%B6%85%E9%A2%91-Hard-Version-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Introl&#39;s blog">
-<meta property="og:description" content="Introl的blog">
+<meta property="og:description" content="看到讨论区都是二分，实际上这道题用贪心来写非常简单 题目分析首先将当前塔台的位置加上通讯距离（即 $a+b$ ）看作为右边界，通过题目不难得出一个贪心策略：如果当前塔台 $i$ 能到达的最右边界比往后的塔台 $i+m$ 位置还要靠右，就可以忽略塔台 $i+1$ 到 $i+m$。转化一下，我们只需要每次记录可以到达的最右边界，如果当前塔台的位置不在最右边界的范围内，就可以更新答案取超频的最大值。因此">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-03T11:26:43.000Z">
+<meta property="article:modified_time" content="2023-08-03T11:28:54.209Z">
 <meta property="article:author" content="Introl_ljl111">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="Luogu">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://example.com/2023/08/03/Luogu-P9455-%E5%85%A5%E9%97%A8%E8%B5%9B-14-%E5%A1%94%E5%8F%B0%E8%B6%85%E9%A2%91-Hard-Version-%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/基础/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/08/03/Luogu-P9455-%E5%85%A5%E9%97%A8%E8%B5%9B-14-%E5%A1%94%E5%8F%B0%E8%B6%85%E9%A2%91-Hard-Version-%E9%A2%98%E8%A7%A3/","path":"2023/08/03/Luogu-P9455-入门赛-14-塔台超频-Hard-Version-题解/","title":"Luogu P9455 [入门赛"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 基础 | Introl's blog</title>
+<title>Luogu P9455 [入门赛 | Introl's blog</title>
   
 
 
@@ -116,7 +120,7 @@
 </meting-js>
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -129,6 +133,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,50 +228,106 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">基础
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/03/Luogu-P9455-%E5%85%A5%E9%97%A8%E8%B5%9B-14-%E5%A1%94%E5%8F%B0%E8%B6%85%E9%A2%91-Hard-Version-%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Introl_ljl111">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Introl's blog">
+      <meta itemprop="description" content="Introl的blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Luogu P9455 [入门赛 | Introl's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Luogu P9455 [入门赛
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-08-03 19:26:43 / 修改时间：19:28:54" itemprop="dateCreated datePublished" datetime="2023-08-03T19:26:43+08:00">2023-08-03</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>看到讨论区都是二分，实际上这道题用贪心来写非常简单</p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>首先将当前塔台的位置加上通讯距离（即 $a+b$ ）看作为右边界，通过题目不难得出一个贪心策略：如果当前塔台 $i$ 能到达的最右边界比往后的塔台 $i+m$ 位置还要靠右，就可以忽略塔台 $i+1$ 到 $i+m$。转化一下，我们只需要每次记录可以到达的最右边界，如果当前塔台的位置不在最右边界的范围内，就可以更新答案取超频的最大值。<br>因此，我们可以用 $ans$ 来储存答案，$r$ 作为最右边界，计算过程就是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a[i]&gt;r)</span><br><span class="line">&#123;</span><br><span class="line">	k=<span class="built_in">max</span>(a[i]-r,k);</span><br><span class="line">&#125;</span><br><span class="line">r=<span class="built_in">max</span>(r,a+b);</span><br></pre></td></tr></table></figure>
+<p>因为是逐个处理，所以在输入时就可以完成计算，代码量极少。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a, b, c, n, r, ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        <span class="keyword">if</span>(a&gt;r&amp;&amp;i)&#123;</span><br><span class="line">            ans=<span class="built_in">max</span>(ans,a-r);</span><br><span class="line">        &#125;</span><br><span class="line">        r=<span class="built_in">max</span>(r,a+b);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-06-07T19:35:07+08:00"
-              content="2023-06-07">
-          06-07
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/06/07/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E9%80%92%E5%BD%92%E5%8F%8A%E9%80%92%E6%8E%A8/" itemprop="url">
-            <span itemprop="name">学习笔记-1-递归&分治</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+              <a href="/tags/Luogu/" rel="tag"><i class="fa fa-tag"></i> Luogu</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/09/CF1846B-Rudolph-and-Tic-Tac-Toe-%E9%A2%98%E8%A7%A3/" rel="prev" title="CF1846B Rudolph and Tic-Tac-Toe 题解">
+                  <i class="fa fa-chevron-left"></i> CF1846B Rudolph and Tic-Tac-Toe 题解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/03/CF1850B-Ten-Words-of-Wisdom%E9%A2%98%E8%A7%A3/" rel="next" title="CF1850B Ten Words of Wisdom题解">
+                  CF1850B Ten Words of Wisdom题解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>
