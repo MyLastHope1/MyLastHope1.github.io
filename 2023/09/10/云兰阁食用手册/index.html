@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":"auto","version":"8.16.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12},"copycode":{"enable":"ture","style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="众所周知，我们将摒弃破旧垃圾的xyxy旧OJ，开始使用新的OJ——云兰阁（Yunlan Court）。那么它与旧的xyxyOJ有什么区别和更新呢，我们应该如何高效使用云兰阁来刷题提升呢？这篇博客将会为你解答所有疑问。  使用的第一步——首页 进入云兰阁，你将会看到这样一个界面： 可以看到，在这个首页上有许多板块。接下来我会一一介绍。 首页轮播图 在首页的靠左侧，有一个轮播的图片，没什么用单纯美观。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云兰阁食用手册">
+<meta property="og:url" content="http://example.com/2023/09/10/%E4%BA%91%E5%85%B0%E9%98%81%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/index.html">
+<meta property="og:site_name" content="Introl&#39;s blog">
+<meta property="og:description" content="众所周知，我们将摒弃破旧垃圾的xyxy旧OJ，开始使用新的OJ——云兰阁（Yunlan Court）。那么它与旧的xyxyOJ有什么区别和更新呢，我们应该如何高效使用云兰阁来刷题提升呢？这篇博客将会为你解答所有疑问。  使用的第一步——首页 进入云兰阁，你将会看到这样一个界面： 可以看到，在这个首页上有许多板块。接下来我会一一介绍。 首页轮播图 在首页的靠左侧，有一个轮播的图片，没什么用单纯美观。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/img/57e496cb0f744868a2772bb8734481cc.png">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/img/027d992f92d142c0be1bb0dfa48bb8fd.png">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/img/434056fd1a8d4cb7b1b7c423206e8eaa.png">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/img/67de280e8eba42b3b91eb0289d23df17.png">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/img/7b412237474541e6af8eb268c2a4013e.png">
+<meta property="og:image" content="https://www.ylcourt.cn/api/public/file/0a3da777163242769b0aab23e1b040ca.png">
+<meta property="article:published_time" content="2023-09-10T02:24:24.458Z">
+<meta property="article:modified_time" content="2024-01-22T09:25:49.096Z">
+<meta property="article:author" content="Introl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ylcourt.cn/api/public/img/57e496cb0f744868a2772bb8734481cc.png">
+
+
+<link rel="canonical" href="http://example.com/2023/09/10/%E4%BA%91%E5%85%B0%E9%98%81%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/09/10/%E4%BA%91%E5%85%B0%E9%98%81%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/","path":"2023/09/10/云兰阁食用手册/","title":"云兰阁食用手册"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>云兰阁食用手册 | Introl's blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Introl's blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">14</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a></li><li class="menu-item menu-item-后台"><a href="https://introl-admin.ylcourt.cn/" rel="section" target="_blank"><i class="fa fa-heartbeat fa-fw"></i>后台</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+    <!--  APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!--  MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<meting-js
+	server="netease"
+	type="playlist"
+	id="8382914608"
+  fixed="true"
+  theme="#00FFFF"
+
+  order="random">
+</meting-js>
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AD%A5%E2%80%94%E2%80%94%E9%A6%96%E9%A1%B5"><span class="nav-number">1.</span> <span class="nav-text">使用的第一步——首页</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E9%A1%B5%E8%BD%AE%E6%92%AD%E5%9B%BE"><span class="nav-number">1.1.</span> <span class="nav-text">首页轮播图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%A8%80%EF%BC%88%E3%83%92%E3%83%88%E3%82%B3%E3%83%88%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">一言（ヒトコト）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B"><span class="nav-number">1.3.</span> <span class="nav-text">近期比赛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E8%BF%917%E5%A4%A9%E5%86%85AC%E6%8E%92%E5%90%8D"><span class="nav-number">1.4.</span> <span class="nav-text">最近7天内AC排名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%91%8A"><span class="nav-number">1.5.</span> <span class="nav-text">公告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83OJ%E7%9A%84%E8%BF%91%E6%9C%9F%E6%AF%94%E8%B5%9B-x2F-%E6%94%AF%E6%8C%81%E7%9A%84%E8%BF%9C%E7%A8%8B%E8%AF%84%E6%B5%8B%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.6.</span> <span class="nav-text">其它OJ的近期比赛&#x2F;支持的远程评测平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%8D%B7%E9%A2%98%E2%80%94%E2%80%94%E9%A2%98%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">开始卷题——题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%A7%88"><span class="nav-number">2.1.</span> <span class="nav-text">总览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">做题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4"><span class="nav-number">2.2.1.</span> <span class="nav-text">提交</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">2.3.</span> <span class="nav-text">其它</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%90%E6%9E%9C%E7%9A%84%E6%A3%80%E9%AA%8C%E2%80%94%E2%80%94%E6%AF%94%E8%B5%9B"><span class="nav-number">3.</span> <span class="nav-text">成果的检验——比赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">比赛类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E6%AF%94%E8%B5%9B"><span class="nav-number">3.2.</span> <span class="nav-text">开始比赛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E7%AE%80%E4%BB%8B"><span class="nav-number">3.2.1.</span> <span class="nav-text">比赛简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">3.2.2.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81"><span class="nav-number">3.2.3.</span> <span class="nav-text">状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%90%8D"><span class="nav-number">3.2.4.</span> <span class="nav-text">排名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%91%8A-1"><span class="nav-number">3.2.5.</span> <span class="nav-text">公告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA"><span class="nav-number">3.2.6.</span> <span class="nav-text">评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BB%E4%B8%8A%E5%B7%85%E5%B3%B0%E2%80%94%E2%80%94%E6%8E%92%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">登上巅峰——排名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8"><span class="nav-number">4.1.</span> <span class="nav-text">图表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E5%8C%BA%E5%9F%9F"><span class="nav-number">4.2.</span> <span class="nav-text">主区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7-amp-amp-%E6%98%B5%E7%A7%B0-amp-amp-%E7%9C%9F%E5%AE%9E%E5%A7%93%E5%90%8D"><span class="nav-number">4.2.1.</span> <span class="nav-text">用户&amp;&amp;昵称&amp;&amp;真实姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%B5%E7%A7%B0-amp-amp-%E5%88%86%E6%95%B0"><span class="nav-number">4.2.2.</span> <span class="nav-text">昵称&amp;&amp;分数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E9%A2%9C%E8%89%B2%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">名字颜色系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag"><span class="nav-number">4.2.3.</span> <span class="nav-text">tag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E5%A4%A7%E7%9A%84%E7%A4%BE%E5%8C%BA%E5%8A%9F%E8%83%BD%E2%80%94%E2%80%94%E8%AE%A8%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">强大的社区功能——讨论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%B2%E8%81%8A"><span class="nav-number">5.0.1.</span> <span class="nav-text">闲聊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">5.0.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%8A%A9"><span class="nav-number">5.0.3.</span> <span class="nav-text">求助</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E8%AE%AE"><span class="nav-number">5.0.4.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95"><span class="nav-number">5.0.5.</span> <span class="nav-text">记录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%A2%E9%98%9F"><span class="nav-number">6.</span> <span class="nav-text">团队</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E9%80%94"><span class="nav-number">6.2.</span> <span class="nav-text">用途</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">个人设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A6%E6%88%B7%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.1.</span> <span class="nav-text">账户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">7.1.1.</span> <span class="nav-text">更改密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E9%82%AE%E7%AE%B1"><span class="nav-number">7.1.2.</span> <span class="nav-text">更改邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E6%89%8B%E6%9C%BA%E5%8F%B7"><span class="nav-number">7.1.3.</span> <span class="nav-text">更改手机号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%96%99%E8%AE%BE%E7%BD%AE"><span class="nav-number">7.2.</span> <span class="nav-text">资料设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F"><span class="nav-number">7.2.1.</span> <span class="nav-text">头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%9F%E5%AE%9E%E5%A7%93%E5%90%8D"><span class="nav-number">7.2.2.</span> <span class="nav-text">真实姓名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%A2%E7%A7%B0"><span class="nav-number">7.2.3.</span> <span class="nav-text">呢称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E6%A0%A1-amp-amp-%E5%AD%A6%E5%8F%B7"><span class="nav-number">7.2.4.</span> <span class="nav-text">学校&amp;&amp;学号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#codeforces%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-number">7.2.5.</span> <span class="nav-text">codeforces用户名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2"><span class="nav-number">7.2.6.</span> <span class="nav-text">博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub"><span class="nav-number">7.2.7.</span> <span class="nav-text">GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B"><span class="nav-number">7.2.8.</span> <span class="nav-text">个人简介</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="nav-number">8.</span> <span class="nav-text">更好的使用体验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown%E6%B8%B2%E6%9F%93"><span class="nav-number">8.1.</span> <span class="nav-text">Markdown渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTeX-amp-amp-KaTeX"><span class="nav-number">8.2.</span> <span class="nav-text">LaTeX&amp;&amp;KaTeX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E5%85%B0%E9%98%81%E7%AE%80%E4%BB%8B"><span class="nav-number">8.3.</span> <span class="nav-text">云兰阁简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="nav-number">8.4.</span> <span class="nav-text">未完待续</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Introl"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Introl</p>
+  <div class="site-description" itemprop="description">Introl's blog</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/MyLastHope1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;MyLastHope1" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:3226749226@qq.com" title="E-Mail → mailto:3226749226@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+<!-- none-select-br -->
+
+<p></p>
+
+<!-- hitokoto -->
+
+<div class="hitokoto-title">
+	<i class="fa fa-paragraph"></i>
+	<b>一言</b>
+</div>
+
+<div id="hitokoto">:D 获取中...</div>
+<i id="hitofrom">:D 获取中...</i>
+
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
+      var hitofrom = document.getElementById('hitofrom');
+      hitofrom.innerText = "	——" + data.from + '\xa0'; 
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+    </script>
+
+    <br/>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/10/%E4%BA%91%E5%85%B0%E9%98%81%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Introl">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Introl's blog">
+      <meta itemprop="description" content="Introl's blog">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="云兰阁食用手册 | Introl's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          云兰阁食用手册
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-10 10:24:24" itemprop="dateCreated datePublished" datetime="2023-09-10T10:24:24+08:00">2023-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-22 17:25:49" itemprop="dateModified" datetime="2024-01-22T17:25:49+08:00">2024-01-22</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>众所周知，我们将摒弃<del>破旧垃圾的xyxy旧OJ</del>，开始使用新的OJ——<strong>云兰阁（Yunlan Court）</strong>。那么它与旧的xyxyOJ有什么区别和更新呢，我们应该如何高效使用云兰阁来刷题提升呢？这篇博客将会为你解答所有疑问。</p>
+<hr>
+<h1 id="使用的第一步——首页"><a href="#使用的第一步——首页" class="headerlink" title="使用的第一步——首页"></a>使用的第一步——首页</h1><p>进入云兰阁，你将会看到这样一个界面：</p>
+<p><img src="https://www.ylcourt.cn/api/public/img/57e496cb0f744868a2772bb8734481cc.png" alt="云兰阁">可以看到，在这个首页上有许多板块。接下来我会一一介绍。</p>
+<h2 id="首页轮播图"><a href="#首页轮播图" class="headerlink" title="首页轮播图"></a>首页轮播图</h2><p>在首页的靠左侧，有一个轮播的图片，<del>没什么用单纯美观</del>。</p>
+<h2 id="一言（ヒトコト）"><a href="#一言（ヒトコト）" class="headerlink" title="一言（ヒトコト）"></a>一言（ヒトコト）</h2><p>对于这个，大家想必非常熟悉吧。没错就是xyxy同款一言，他会展示一句名言名句，激励我们继续努力。</p>
+<h2 id="近期比赛"><a href="#近期比赛" class="headerlink" title="近期比赛"></a>近期比赛</h2><p>这里会显示云兰阁最近的比赛，让大家不会错过任何一场比赛。</p>
+<h2 id="最近7天内AC排名"><a href="#最近7天内AC排名" class="headerlink" title="最近7天内AC排名"></a>最近7天内AC排名</h2><p>对于这个，我更喜欢叫它<del><strong>卷王监视器</strong></del>，有了它，你就快速捕捉到七天之内，谁卷的题目最多。</p>
+<h2 id="公告"><a href="#公告" class="headerlink" title="公告"></a>公告</h2><p>在这里会发布一些来自管理员的公告，一定要记得及时阅读关键信息！</p>
+<h2 id="其它OJ的近期比赛-x2F-支持的远程评测平台"><a href="#其它OJ的近期比赛-x2F-支持的远程评测平台" class="headerlink" title="其它OJ的近期比赛&#x2F;支持的远程评测平台"></a>其它OJ的近期比赛&#x2F;支持的远程评测平台</h2><p>无关紧要的东西。</p>
+<h1 id="开始卷题——题目"><a href="#开始卷题——题目" class="headerlink" title="开始卷题——题目"></a>开始卷题——题目</h1><p><img src="https://www.ylcourt.cn/api/public/img/027d992f92d142c0be1bb0dfa48bb8fd.png"></p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>这里是云兰阁的核心板块。在云兰阁中，目前已经有了上千道题目。题目分为多个题库：主题库    HDU Codeforces POJ GYM AtCoder SPOJ BAS。目前，云兰阁导入了Codeforces的题目以及BAS的题目（BAS题目就是xyxy后来增加的入门题目）。给大家提供了丰富的题目。</p>
+<p>同时，我们对题目难度进行了划分：<strong>入门 普及- 普及&#x2F;提高- 普及+&#x2F;提高 提高+&#x2F;省选- 省选I&#x2F;NOI+&#x2F;CTSC</strong>。方便同学按照自己的能力水平高效科学刷题。</p>
+<p>在题库的右侧，还有题目的统计信息，以及标签系统。可以快速筛选题目。</p>
+<h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><p><img src="https://www.ylcourt.cn/api/public/img/434056fd1a8d4cb7b1b7c423206e8eaa.png" alt="屏幕截图 20230910 010216.png"></p>
+<p>我们点开一道题目。明显可以看到，题目界面分为了两块：题目描述和代码提交框。左侧的题目信息与xyxy区别不大，只是换了一个好看的UI设计。在右侧的代码提交框，我们可以选择提交的语言（喜报，可以开O2了），代码的主题，下方还有新增的”在线自测”功能。<del>（这个功能方便了那些自信的做完题目懒得测样例的巨犇）</del></p>
+<p>如果不习惯左右分割的设计，你也可以拖动中间的调节条更改左右的比例。</p>
+<p><img src="https://www.ylcourt.cn/api/public/img/67de280e8eba42b3b91eb0289d23df17.png" alt="屏幕截图 20230910 010216.png"></p>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><p>在按下提交按钮后，在代码提交框的左下角，会实时显示评测结果，具体如下图所示：</p>
+<p><img src="https://www.ylcourt.cn/api/public/img/7b412237474541e6af8eb268c2a4013e.png" alt="屏幕截图 20230910 010216.png"></p>
+<p>关于题目的评测状态，可以参考下图：</p>
+<p><img src="https://www.ylcourt.cn/api/public/file/0a3da777163242769b0aab23e1b040ca.png"></p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>大佬们每做一道题，会获得相应的OI排行榜分数，对于不同难度的题目，会有不同的分数，具体请看”排名篇“。</p>
+<h1 id="成果的检验——比赛"><a href="#成果的检验——比赛" class="headerlink" title="成果的检验——比赛"></a>成果的检验——比赛</h1><h2 id="比赛类型"><a href="#比赛类型" class="headerlink" title="比赛类型"></a>比赛类型</h2><p>比赛类型分为<strong>ACM和OI</strong>，这里的ACM和OI与xyxyOJ不同。ACM没有分数机制，只看做题数量和罚时；而OI赛制有分数，以分数为主要排名。绝大多数我们使用OI赛制。</p>
+<p>比赛分为<strong>公开赛，保护赛，私有赛</strong>。</p>
+<p>公开赛：不需要密码直接参加。</p>
+<p>保护赛：可以查看题目，但提交需要密码。</p>
+<p>私有赛：需要密码进入。</p>
+<h2 id="开始比赛"><a href="#开始比赛" class="headerlink" title="开始比赛"></a>开始比赛</h2><p>比赛界面分为为 <strong>比赛简介、题目、状态、排名、公告、评论</strong>。</p>
+<h3 id="比赛简介"><a href="#比赛简介" class="headerlink" title="比赛简介"></a>比赛简介</h3><p>这里会展示比赛的相关信息，在比赛前请认真阅读。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>在这里会显示比赛的题目也会展示题目的通过率。</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>这里相当于提交记录，你可以看到自己在比赛中所有的提交记录。</p>
+<h3 id="排名"><a href="#排名" class="headerlink" title="排名"></a>排名</h3><p>这里会有排行榜，可以快速查看自己在比赛中的位次以及他人的做题情况。</p>
+<h3 id="公告-1"><a href="#公告-1" class="headerlink" title="公告"></a>公告</h3><p>这里会显示比赛的公告，请留意。</p>
+<h3 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h3><p>你可以在这里询问比赛相关问题，<strong>不可询问解法等以及无意义内容</strong>。</p>
+<h1 id="登上巅峰——排名"><a href="#登上巅峰——排名" class="headerlink" title="登上巅峰——排名"></a>登上巅峰——排名</h1><p>排名分为<strong>OI排名</strong>和<strong>ACM排名</strong>。</p>
+<p>ACM排名只看做题数目，在实际学习中的参考价值不高，且功能与OI排名基本一致，这里不再阐述</p>
+<h2 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h2><p>在这里会将每个人的分数以<strong>折线图和柱状图</strong>来呈现，也可以在这里下载图表。</p>
+<h2 id="主区域"><a href="#主区域" class="headerlink" title="主区域"></a>主区域</h2><p>排名系统中包括<strong>用户，昵称，真实姓名，分数，AC&#x2F;总数，通过率，个性简介</strong>。</p>
+<h3 id="用户-amp-amp-昵称-amp-amp-真实姓名"><a href="#用户-amp-amp-昵称-amp-amp-真实姓名" class="headerlink" title="用户&amp;&amp;昵称&amp;&amp;真实姓名"></a>用户&amp;&amp;昵称&amp;&amp;真实姓名</h3><p>这里是每个用户的基本信息，除用户名之外，昵称和真实姓名都可以在个人设置中进行修改，但是为了方便统计信息，<strong>请不要对真实姓名进行修改</strong>。</p>
+<h3 id="昵称-amp-amp-分数"><a href="#昵称-amp-amp-分数" class="headerlink" title="昵称&amp;&amp;分数"></a>昵称&amp;&amp;分数</h3><p>每AC一道题目，OI排行中就会增加相应的分数，具体的规则为：</p>
+<p>$0.1\times 分数+2 \times 难度$</p>
+<p>在题目中，可以查看每道题你可以获得的分数。</p>
+<p><strong>那分数有什么用呢？</strong></p>
+<h4 id="名字颜色系统"><a href="#名字颜色系统" class="headerlink" title="名字颜色系统"></a>名字颜色系统</h4><p>根据不同的分数，你的昵称颜色也会改变。<del>一定程度上，名字颜色可以反应你的实力</del>。</p>
+<table>
+<thead>
+<tr>
+<th>颜色</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>黑名</td>
+<td>6000</td>
+</tr>
+<tr>
+<td>红名</td>
+<td>3000</td>
+</tr>
+<tr>
+<td>橙名</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>绿名</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>蓝名</td>
+<td>500</td>
+</tr>
+<tr>
+<td>灰名</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>除此之外，还有管理员特有的紫名，这是管理员的象征，以及臭名昭著的棕名，棕名用于<strong>处罚在云兰阁中违反管理规定的情况</strong>。</p>
+<p><strong>请注意，名字颜色不能反映一切实力，不要过于看重名字颜色而做一些不符合规定的事情</strong></p>
+<h3 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h3><p>tag是在名字后面添加的一个牌子，<del>最常见的牌子是<strong>作弊者tag</strong></del>。</p>
+<p>因云兰阁还没有确认tag的具体用法，这里不多阐述。</p>
+<h1 id="强大的社区功能——讨论"><a href="#强大的社区功能——讨论" class="headerlink" title="强大的社区功能——讨论"></a>强大的社区功能——讨论</h1><p>在讨论中，有多个板块，如：闲聊，题解，求助，建议，记录等等。</p>
+<h3 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h3><p><del>在这里你可以尽情摸鱼</del>，但请记住，云兰阁是一个学术类型偏多的OJ，不要把时间浪费在无意义内容上。此板块管理员会定期清理无意义帖子。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>在这里会有许多巨犇发布的题解，会对我们的学习有很大帮助，<strong>为了减少抄袭现象，云兰阁中大部分题解不展示完整代码</strong>。此外，此区域<strong>禁止发布无意义的，与题目无关的内容</strong>，如果多次违反，将禁止此用户发帖。</p>
+<h3 id="求助"><a href="#求助" class="headerlink" title="求助"></a>求助</h3><p>在这里你可以求助一些不懂的问题，包括但不限于<strong>OI，数学</strong>等问题，但是不可以在这里发布除此之外的内容，违反者同上。</p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>在这里你可以反馈一些云兰阁中的问题，如题目排版，题目错误，新需求等等。但是如果发现云兰阁有重大bug，请不要发帖，直接联系<strong>EBeason或Introl</strong>。</p>
+<h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p>这种类型的记录模块旨在帮助编程爱好者或竞赛选手追踪他们在解决编程问题方面的进度和表现。</p>
+<hr>
+<p><strong>如果发现有人违反如上规定，可以在帖子界面举报。</strong></p>
+<h1 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h1><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>公开团队：可以直接加入。</p>
+<p>保护团队：可以申请加入。</p>
+<p>私有团队：需要密码才可以申请。</p>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>团队主要用于教师教学使用，在团队中相当于独立的一套系统，与外界基本相同，不在阐述。</p>
+<h1 id="个人设置"><a href="#个人设置" class="headerlink" title="个人设置"></a>个人设置</h1><p>这个板块会讲述如何正确设置个人信息。</p>
+<h2 id="账户设置"><a href="#账户设置" class="headerlink" title="账户设置"></a>账户设置</h2><p>在这里你可以更改密码，邮箱，<del>手机号</del>（不可使用）</p>
+<h3 id="更改密码"><a href="#更改密码" class="headerlink" title="更改密码"></a>更改密码</h3><p>你可以在这里修改自己的密码，<strong>一定一定要记牢</strong>。</p>
+<p><strong>在获取到自己账号的随机密码后，请立即更改密码</strong></p>
+<h3 id="更改邮箱"><a href="#更改邮箱" class="headerlink" title="更改邮箱"></a>更改邮箱</h3><p>你可以在这里输入自己的邮箱。</p>
+<p>首先输入自己的密码确认身份，然后输入你的邮箱，点击右侧的绿色按键，这时会有一封包含验证码的邮件发到你的邮箱，将验证码在文本框中输入即可绑定。</p>
+<p><strong>邮箱可以帮助你在忘记密码时进行修改，十分重要，建议设置</strong></p>
+<h3 id="更改手机号"><a href="#更改手机号" class="headerlink" title="更改手机号"></a>更改手机号</h3><p>云兰阁目前暂不支持。</p>
+<h2 id="资料设置"><a href="#资料设置" class="headerlink" title="资料设置"></a>资料设置</h2><p>在这里你可以修改对外展示的个人信息。</p>
+<h3 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h3><p>拖动或者选择图片到此处可以更改自己的头像。</p>
+<h3 id="真实姓名"><a href="#真实姓名" class="headerlink" title="真实姓名"></a>真实姓名</h3><p><strong>请确保此为你的真实姓名，不要对他进行修改，否则数据统计时会出现问题。</strong></p>
+<h3 id="呢称"><a href="#呢称" class="headerlink" title="呢称"></a>呢称</h3><p>可以自己设置自己喜欢的昵称。但是<strong>建议不要使用空白昵称，请保持他默认与用户名相同</strong>。</p>
+<h3 id="学校-amp-amp-学号"><a href="#学校-amp-amp-学号" class="headerlink" title="学校&amp;&amp;学号"></a>学校&amp;&amp;学号</h3><p>可以设置自己的学校，设置后会在某些排名和主页显示</p>
+<h3 id="codeforces用户名"><a href="#codeforces用户名" class="headerlink" title="codeforces用户名"></a>codeforces用户名</h3><p>你可以在这里填入自己的cf用户名，他会同步你的CF Rating。</p>
+<h3 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h3><p>在这里可以添加自己的博客链接。注意要放入完整链接。</p>
+<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><p>同样需要放入完整跳转链接。</p>
+<h3 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h3><p>你可以在这里填写个人简介，支持<strong>Markdown渲染</strong>。</p>
+<h1 id="更好的使用体验"><a href="#更好的使用体验" class="headerlink" title="更好的使用体验"></a>更好的使用体验</h1><h2 id="Markdown渲染"><a href="#Markdown渲染" class="headerlink" title="Markdown渲染"></a>Markdown渲染</h2><p>在云兰阁中，大部分界面都支持markdown语法，关于Markdown的使用请参考<a target="_blank" rel="noopener" href="https://markdown.com.cn/cheat-sheet.html">Markdown 语法速查表 | Markdown 官方教程</a>。</p>
+<h2 id="LaTeX-amp-amp-KaTeX"><a href="#LaTeX-amp-amp-KaTeX" class="headerlink" title="LaTeX&amp;&amp;KaTeX"></a>LaTeX&amp;&amp;KaTeX</h2><p>云兰阁支持LaTeX&amp;&amp;KaTeX等数学公式输入，具体可参考<a target="_blank" rel="noopener" href="https://www.latexlive.com/">在线LaTeX公式编辑器-编辑器 (latexlive.com)</a>。</p>
+<h2 id="云兰阁简介"><a href="#云兰阁简介" class="headerlink" title="云兰阁简介"></a>云兰阁简介</h2><p><a target="_blank" rel="noopener" href="http://oj.ylcourt.cn:100/introduction">Introduction - 云兰阁 (ylcourt.cn)</a></p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/30/P9586-%E6%B8%B8%E6%88%8F-%E9%A2%98%E8%A7%A3/" rel="prev" title="P9586 游戏 题解">
+                  <i class="fa fa-chevron-left"></i> P9586 游戏 题解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/10/07/CSP2023%E6%B8%B8%E8%AE%B0/" rel="next" title="CSP2023 游记">
+                  CSP2023 游记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Introl</span>
+</div>
+<div>
+<!--添加网站运行时间-->
+<span>小破站已经在风雨中度过了</span>
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    function createtime() {
+        const startTime = '04/09/2023 00:00:00',
+            start = new Date(startTime)
+        let mill = new Date() - start,
+            seconds = Math.floor(mill / 1000),
+            mins = Math.floor(seconds / 60),
+            hours = Math.floor(mins / 60),
+            days = Math.floor(hours / 24)
+        const time = {
+            seconds: seconds - mins * 60,
+            mins: mins - hours * 60,
+            hours: hours - days * 24,
+        }
+        for (const k in time) {
+            time[k] = `${time[k]}`.padStart(2, '0')
+        }
+        document.getElementById("timeDate").innerHTML = ` ${days} 天`
+        document.getElementById("times").innerHTML = ` ${time.hours} 小时 ${time.mins} 分 ${time.seconds} 秒`
+    }
+    setInterval(createtime, 500)
+</script>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
