@@ -23,29 +23,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":"auto","version":"8.16.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12},"copycode":{"enable":"ture","style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="分析 一道简单的模拟题，考场很快想出正解。 然后考虑小C获胜的情况：小C想要获胜，作为先手，只有自己的杀比小D的闪要多，或者自己的斩比小D的杀要多时.他是一定能获胜的。即 ​sha_1&gt;shan_2 或 ​zhan_1&gt;sha_2 时，小C获胜。 首先分析题意，不难发现：杀与闪是克制关系，斩和杀是克制关系。 接下来考虑小D获胜的情况：在小C第一轮不能获胜后，小C能做的最优策略就是尽可能">
+    <meta name="description" content="P1570题目解析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P9586 游戏 题解">
-<meta property="og:url" content="http://example.com/2023/08/30/P9586-%E6%B8%B8%E6%88%8F-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="LuoguP1570题解">
+<meta property="og:url" content="http://example.com/2024/05/19/LuoguP1570%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Introl&#39;s blog">
-<meta property="og:description" content="分析 一道简单的模拟题，考场很快想出正解。 然后考虑小C获胜的情况：小C想要获胜，作为先手，只有自己的杀比小D的闪要多，或者自己的斩比小D的杀要多时.他是一定能获胜的。即 ​sha_1&gt;shan_2 或 ​zhan_1&gt;sha_2 时，小C获胜。 首先分析题意，不难发现：杀与闪是克制关系，斩和杀是克制关系。 接下来考虑小D获胜的情况：在小C第一轮不能获胜后，小C能做的最优策略就是尽可能">
+<meta property="og:description" content="P1570题目解析">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-30T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-10T09:22:34.218Z">
+<meta property="article:published_time" content="2024-05-19T05:48:28.000Z">
+<meta property="article:modified_time" content="2024-05-19T05:52:15.869Z">
 <meta property="article:author" content="Introl">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="Luogu">
+<meta property="article:tag" content="二分">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/08/30/P9586-%E6%B8%B8%E6%88%8F-%E9%A2%98%E8%A7%A3/">
+<link rel="canonical" href="http://example.com/2024/05/19/LuoguP1570%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/08/30/P9586-%E6%B8%B8%E6%88%8F-%E9%A2%98%E8%A7%A3/","path":"2023/08/30/P9586-游戏-题解/","title":"P9586 游戏 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/05/19/LuoguP1570%E9%A2%98%E8%A7%A3/","path":"2024/05/19/LuoguP1570题解/","title":"LuoguP1570题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P9586 游戏 题解 | Introl's blog</title>
+<title>LuoguP1570题解 | Introl's blog</title>
   
 
 
@@ -133,7 +134,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#P1570-%E9%A2%98%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">P1570 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">题目分析</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -227,7 +228,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/30/P9586-%E6%B8%B8%E6%88%8F-%E9%A2%98%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/19/LuoguP1570%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -240,12 +241,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P9586 游戏 题解 | Introl's blog">
+      <meta itemprop="name" content="LuoguP1570题解 | Introl's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P9586 游戏 题解
+          LuoguP1570题解
         </h1>
 
         <div class="post-meta-container">
@@ -255,15 +256,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-08-30 08:00:00" itemprop="dateCreated datePublished" datetime="2023-08-30T08:00:00+08:00">2023-08-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 17:22:34" itemprop="dateModified" datetime="2023-12-10T17:22:34+08:00">2023-12-10</time>
+      <time title="创建时间：2024-05-19 13:48:28 / 修改时间：13:52:15" itemprop="dateCreated datePublished" datetime="2024-05-19T13:48:28+08:00">2024-05-19</time>
     </span>
 
   
@@ -282,12 +277,17 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>一道简单的模拟题，考场很快想出正解。</p>
-<p>然后考虑小C获胜的情况：小C想要获胜，作为先手，只有自己的杀比小D的闪要多，或者自己的斩比小D的杀要多时.他是一定能获胜的。即 $sha_1&gt;shan_2$ 或 $zhan_1&gt;sha_2$ 时，小C获胜。</p>
-<p>首先分析题意，不难发现：杀与闪是克制关系，斩和杀是克制关系。</p>
-<p>接下来考虑小D获胜的情况：在小C第一轮不能获胜后，小C能做的最优策略就是尽可能的消耗小D的牌。如果消耗完之后，小D的杀依然比小C的闪要多，或者自己的斩比小C的杀要多时，小D获胜。</p>
-<p>如果两种情况都不满足，那就是平局了。</p>
-<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int ll</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> MaxN = <span class="number">1e6</span> + <span class="number">100</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="type">int</span> T=<span class="number">1</span>, N, M;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">Solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> sha1,shan1,zhan1,sha2,zhan2,shan2;</span><br><span class="line">    cin&gt;&gt;sha1&gt;&gt;shan1&gt;&gt;zhan1&gt;&gt;sha2&gt;&gt;shan2&gt;&gt;zhan2;</span><br><span class="line">    <span class="keyword">if</span>(sha1&gt;shan2||zhan1&gt;sha2)&#123;<span class="comment">//小C Win</span></span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        shan2-=sha1;</span><br><span class="line">        sha2-=zhan1;</span><br><span class="line">        <span class="keyword">if</span>(sha2&gt;shan1||zhan2&gt;sha1)&#123;<span class="comment">//小D Win</span></span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;D&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;E&quot;</span>);<span class="comment">//平局</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">    <span class="comment">//freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">        <span class="built_in">Solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h1 id="P1570-题解"><a href="#P1570-题解" class="headerlink" title="P1570 题解"></a>P1570 题解</h1><h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>刚开始做这道题可能没什么思路，所以我们先从式子入手：</p>
+<p>假设存在最优解ans：$ans&#x3D;\frac{\sum v_i}{\sum c_i}$</p>
+<p>转化得 $ans\times\sum c_i&#x3D;\sum v_i$</p>
+<p>移项得 $ans\times \sum c_i-\sum v_i&#x3D;0$</p>
+<p>可见，当式子的结果趋向 $ 0$ 时，ans是最优解。</p>
+<p>所以我们可以设 $f(ans)&#x3D;ans\times\sum c_i-\sum v_i$</p>
+<p>显然，$f(ans)$是一个一次函数，具有单调性。这个时候就会想到可以使用二分答案来解决这个问题。</p>
+<p>既然使用二分答案来解决，首先应该考虑<strong>边界问题</strong>，这道题的边界比较好设定，左端点显然为$ 0$，而右端点的设定，我们秉持着不怕大只怕小的原则，可以将其设定为$\sum v_i$。</p>
+<p>然后考虑<strong>check函数</strong>问题，思考之后可以发现，我们只需要判断在ans确定的情况下，最优的取法。所以考虑贪心，把每种调料的$f(ans)$计算出来，从小到大排序之后取前$m$个调料的一次函数值并累加。计算之后的数值与零相比较，如果小于零的话，说明$ans$还可以更大，反之则应该更小。</p>
+<p>到这里，这道题目就ac了，要注意好细节问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long </span></span><br><span class="line"><span class="type">int</span> n,m,cnt=<span class="number">0</span>;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">coffee</span>&#123;</span><br><span class="line">    <span class="type">int</span> v,c;</span><br><span class="line">    <span class="type">double</span> tot;</span><br><span class="line">&#125;a[<span class="number">10010</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i].v;cnt+=a[i].v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i].c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(coffee a,coffee b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.tot&lt;b.tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">double</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        a[i].tot=x*a[i].c-a[i].v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        sum+=a[i].tot;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum&lt;=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">search</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> l=<span class="number">0</span>,r=cnt;</span><br><span class="line">    <span class="keyword">while</span>(r-l&gt;=<span class="number">1e-5</span>)&#123;</span><br><span class="line">        <span class="type">double</span> mid=(l+r)/<span class="number">2.0</span>;</span><br><span class="line">        <span class="comment">//cout&lt;&lt;mid&lt;&lt;endl;</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>(mid))&#123;</span><br><span class="line">            l=mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            r=mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">read</span>();</span><br><span class="line">    <span class="type">double</span> ans=<span class="built_in">search</span>();</span><br><span class="line">    <span class="built_in">printf</span>(“%<span class="number">.3</span>lf”,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -299,20 +299,18 @@
           <div class="post-tags">
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
               <a href="/tags/Luogu/" rel="tag"><i class="fa fa-tag"></i> Luogu</a>
+              <a href="/tags/%E4%BA%8C%E5%88%86/" rel="tag"><i class="fa fa-tag"></i> 二分</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/25/CF1862B-Sequence-Game-%E9%A2%98%E8%A7%A3/" rel="prev" title="CF1862B Sequence Game 题解">
-                  <i class="fa fa-chevron-left"></i> CF1862B Sequence Game 题解
+                <a href="/2024/03/25/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3-%E4%BA%8C%E5%88%86/" rel="prev" title="学习笔记-3-二分">
+                  <i class="fa fa-chevron-left"></i> 学习笔记-3-二分
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/09/10/%E4%BA%91%E5%85%B0%E9%98%81%E9%A3%9F%E7%94%A8%E6%89%8B%E5%86%8C/" rel="next" title="云兰阁食用手册">
-                  云兰阁食用手册 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
